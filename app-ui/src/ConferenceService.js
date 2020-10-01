@@ -3,8 +3,8 @@ const RTCMultiConnection = window.RTCMultiConnection;
 const DetectRTC = window.DetectRTC;
 
 // const SERVER_URL = "http://localhost:9001/";
-// const SERVER_URL = window.location.protocol +"//"+window.location.hostname+":9001/";
-const SERVER_URL = "https://a63915b2bc5c.ngrok.io/";
+const SERVER_URL = window.origin + "/"
+// const SERVER_URL = "https://a63915b2bc5c.ngrok.io/";
 const WIDGET_ID = "videos-container";
 const BRODCAT_EVENT = "RTCMultiConnection-Custom-Message";
 
