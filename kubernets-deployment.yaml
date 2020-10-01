@@ -1,0 +1,56 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: webrtc-app
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  rules:
+  - host: webrtc.apps.ricardojlrufino.com
+    http:
+      paths:
+      - backend:
+          serviceName: webrtc-app
+          servicePort: 80
+  tls:        
+  - hosts:
+    - webrtc.apps.ricardojlrufino.com
+    secretName: ricardo-webrtc-tls 
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: webrtc-app
+spec:
+ ports:
+ - port: 80
+   targetPort: http
+ selector:
+   app: webrtc-app
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: webrtc-app
+  name: webrtc-app
+spec:
+  selector:
+    matchLabels:
+      app: webrtc-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: webrtc-app
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - image: docker.COMPANY.com.br/ricardo/webrtc-demo:latest
+        imagePullPolicy: Always
+        name: webrtc-app
+        ports:
+        - containerPort: 9001
+          name: http
