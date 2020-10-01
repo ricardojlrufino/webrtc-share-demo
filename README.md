@@ -43,8 +43,20 @@ TIP: Testing in other PC using HTTPS
 npm install -g localtunnel
 lt --port 8000
 ```
+### Docker
 
+You can generate a "production" version using:
 
+```bash
+docker build --tag="webrtcdemo" .
+docker run -p 9001:9001 --rm --name teste webrtcdemo:latest
+```
+
+**Kubernetes **(you need deploy image to a public server):
+
+```bash
+kubectl create -f kubernets-deployment.yaml
+```
 
 ## License
 
