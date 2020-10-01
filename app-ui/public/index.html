@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"  />
+    
+    <link href="%PUBLIC_URL%/css/app.css" rel="stylesheet">
+    <link href="%PUBLIC_URL%/css/getHTMLMediaElement.css" rel="stylesheet"> <!--TODO: BOM SERIA TRANSFORMAR EM COMPONENTES-->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="%PUBLIC_URL%/js_libs/getHTMLMediaElement.js"></script>
+    <script src="%PUBLIC_URL%/js_libs/RTCMultiConnection.js"></script>
+    <script src="%PUBLIC_URL%/js_libs/socket.io.js"></script>
+
+    <title>Conference WebRTC</title>
+  </head>
+  <body>
+
+
+    <script>
+        $(function () {
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+
+            $(window).resize(function (e) {
+                if ($(window).width() <= 768) {
+                    $("#wrapper").removeClass("toggled");
+                } else {
+                    $("#wrapper").addClass("toggled");
+                }
+            });
+        });
+
+    </script>
+
+  </body>
+</html>

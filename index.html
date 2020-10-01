@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  <title>Screen Sharing using RTCMultiConnection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<section class="make-center">
+    <input type="text" id="room-id" value="abcdef" autocorrect=off autocapitalize=off size=20>
+    <button id="open-room">Open Room</button>
+    <button id="join-room">Join Room</button>
+    <button id="open-or-join-room">Auto Open Or Join Room</button>
+
+    <div id="videos-container" style="margin: 20px 0;"></div>
+
+    <div id="room-urls" style="text-align: center;display: none;background: #F1EDED;margin: 15px -10px;border: 1px solid rgb(189, 189, 189);border-left: 0;border-right: 0;"></div>
+  </section>
+
+  <script src="/js/libs/RTCMultiConnection.js"></script>
+  <!-- <script src="/js/libs/adapter.js"></script> -->
+  <script src="/js/libs/socket.io.js"></script>
+  <script src="/js/app.js"></script>
+  
+  <link rel="stylesheet" href="/css/getHTMLMediaElement.css">
+  <script src="/js/libs/getHTMLMediaElement.js"></script>
+</body>
+</html>
