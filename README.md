@@ -15,6 +15,15 @@ The application consists of two modules:
 - Node.JS + Socket.IO server - Signaling server 
 
 
+## Features 
+
+ - Screen sharing support
+ - Multiple room support
+ - Approved Screen Sharing request.
+ - Enter the conference via the share link
+ - View active participants (needs to improve)
+
+*This project is not a production version*
 
 ## Running 
 
